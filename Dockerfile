@@ -1,13 +1,14 @@
-# Use official Nginx image as base
+# Use the official Nginx image as base image
 FROM nginx:alpine
 
-# Copy the HTML, CSS, and JavaScript files to the appropriate directory
-COPY index.html /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
-COPY script.js /usr/share/nginx/html/
+# Set the working directory in the container
+WORKDIR /usr/share/nginx/html
 
-# Expose port 80 to make the app accessible
+# Copy the content of the Band Website repository into the container
+COPY . .
+
+# Expose port 80
 EXPOSE 5000
 
-# Define the command to start Nginx when the container starts
+# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
