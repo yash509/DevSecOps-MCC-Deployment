@@ -261,7 +261,7 @@ pipeline {
         stage('Deploy to Docker Container'){
             steps{
                 //dir('BMI Calculator (JS)') {
-                    sh 'docker run -d --name magic-color -p 3000:3000 yash5090/magic-color:latest' 
+                    sh 'docker run -d --name magic-color -p 5000:80 yash5090/magic-color:latest' 
                 //}
             }
         }
