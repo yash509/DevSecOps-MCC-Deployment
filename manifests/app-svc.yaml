@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: lms-system-service
+  name: magic-color-service
 spec:
   selector:
-    app: lms-system
+    app: magic-color
   ports:
     - protocol: TCP
       port: 5000
