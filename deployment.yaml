@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magic-color-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: magic-color
+  template:
+    metadata:
+      labels:
+        app: magic-color
+    spec:
+      containers:
+      - name: magic-color
+        image: yash5090/magic-color:latest
+        ports:
+        - containerPort: 5000
